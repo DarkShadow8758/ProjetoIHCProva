@@ -7,10 +7,192 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProjetoIHCProva.styles.css" asp-append-version="true" />
+    <style>
+ 
+        body {
+            background: linear-gradient(135deg, #3e4a52, #2a2d34); 
+            font-family: 'Times New Roman', serif;
+            color: #e0e0e0;
+        }
+
+        header {
+            background: #2d3e50; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+        }
+
+        nav a {
+            color: #cfa34d;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            color: #cfa34d;
+            font-family: 'Georgia', serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .navbar {
+            border-bottom: 2px solid #4c4f56;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #cfa34d; 
+        }
+
+        footer {
+            background: #222222;
+            color: #d9b56f;
+            font-size: 1rem;
+            border-top: 2px solid #4c4f56;
+            padding: 10px 0;
+        }
+
+        footer a {
+            color: #d9b56f;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            background-color: #cfa34d;
+            color: #2a2a2a;
+            border: 1px solid #b08d44;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #b08d44;
+            color: #fff;
+        }
+
+        h1, h2, h3 {
+            color: #cfa34d;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .form-control {
+            background-color: #2b353c;
+            color: #e0e0e0;
+            border: 1px solid #4c4f56;
+        }
+
+        .form-control:focus {
+            border-color: #cfa34d;
+            box-shadow: 0 0 10px rgba(207, 163, 77, 0.8);
+        }
+
+        a {
+            color: #cfa34d;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .gears {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: #cfa34d;
+        }
+
+        .gear-background {
+            position: relative;
+            background-image: url('~/images/gear-background.png');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+        }
+        .steampunk-label {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            color: #9e7b52;
+            margin-bottom: 0.5rem;
+        }
+
+        .steampunk-input {
+            background-color: #f9f3e3;
+            border: 2px solid #7b5a2f;
+            color: #5a4025;
+            padding: 10px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+            .steampunk-input:focus {
+                outline: none;
+                box-shadow: 0 0 10px rgba(158, 123, 82, 0.8);
+                border-color: #9e7b52;
+            }
+
+        .text-danger {
+            color: #e74c3c;
+        }
+
+        .steampunk-btn {
+            background-color: #9e7b52;
+            color: #fff;
+            border: 2px solid #7b5a2f;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+            .steampunk-btn:hover {
+                background-color: #7b5a2f;
+                border-color: #5a4025;
+                cursor: pointer;
+            }
+
+            .steampunk-btn:focus {
+                outline: none;
+                box-shadow: 0 0 10px rgba(158, 123, 82, 0.8);
+            }
+
+            .steampunk-btn.btn-link {
+                background: none;
+                color: #9e7b52;
+                text-decoration: underline;
+            }
+
+                .steampunk-btn.btn-link:hover {
+                    color: #7b5a2f;
+                }
+
+        .steampunk-table {
+            background-color: #d9c0a7;
+            border: 2px solid #7b5a2f;
+        }
+
+        .steampunk-link {
+            color: #9e7b52;
+        }
+
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-steampunk border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ProjetoIHCProva</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -23,6 +205,9 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Clientes" asp-action="Index">Clientes</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
@@ -30,7 +215,7 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container gear-background">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -41,6 +226,7 @@
             &copy; 2024 - ProjetoIHCProva - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
